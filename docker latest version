@@ -1,0 +1,4 @@
+https://get.docker.com/
+curl -fsSL https://get.docker.com | sh
+docker --version
+
