@@ -1,4 +1,11 @@
 https://get.docker.com/
 curl -fsSL https://get.docker.com | sh
 docker --version
+#####make sure that you started-up the docker service. If not execute the below command,
+systemctl start docker
+systemctl enable docker
+
+
+##Tested and worked in CentOS Linux release 7.6.1810 (Core)
+
 
