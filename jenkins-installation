@@ -1,0 +1,49 @@
+👉 Jenkins is a Java application, so the first step is to install Java. Run the following command to install the OpenJDK 8 package
+sudo yum install java-1.8.0-openjdk-devel
+ 
+👉 The next step is to enable the Jenkins repository. To do that, import the GPG key using the following curl command
+curl --silent --location http://pkg.jenkins-ci.org/redhat-stable/jenkins.repo | sudo tee /etc/yum.repos.d/jenkins.repo
+
+👉 And add the repository to your system with
+sudo rpm --import https://jenkins-ci.org/redhat/jenkins-ci.org.key
+
+👉 Once the repository is enabled, install the latest stable version of Jenkins by typing
+sudo yum install jenkins
+
+👉 After the installation process is completed, start the Jenkins service with:
+sudo systemctl start jenkins
+
+👉 To check whether it started successfully run:
+systemctl status jenkins
+
+👉 Finally enable the Jenkins service to start on system boot:
+sudo systemctl enable jenkins
+
+👉 Adjust the firewall with:
+sudo firewall-cmd --permanent --zone=public --add-port=8080/tcp
+sudo firewall-cmd --reload
+
+👉 To set up your new Jenkins installation, open your browser and type your domain or IP address followed by port 8080
+http://your_ip_or_domain:8080
+
+👉 Use the following command to print the password on your terminal:
+sudo cat /var/lib/jenkins/secrets/initialAdminPassword
+
+👉 Copy the password from your terminal, paste it into the Administrator password field and click Continue.
+
+👉 On the next screen, you will be asked whether you want to install the suggested plugins or to select specific plugins. 
+
+👉 Click on the Install suggested plugins box, and the installation process will start immediately.
+
+👉 Once the installation is complete, you will be prompted to set up the first administrative user. 
+
+👉 Fill out all required information and click Save and Continue.
+
+👉On the next page, you will be asked to set the URL for the Jenkins instance. 
+
+👉 The URL field will be populated with an automatically generated URL.
+ 
+👉 To complete the setup confirm the URL by clicking on the Save and Finish button.
+
+
+ 
